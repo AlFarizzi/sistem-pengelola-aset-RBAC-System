@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'nama', 'jk', 'no_hp', 'alamat', 'email', 'level', 'nik'
+        'username', 'password', 'nama', 'no_hp', 'alamat', 'email','nik','level'
     ];
 
     /**
@@ -41,6 +41,10 @@ class User extends Authenticatable
 
     public function services(){
         return $this->hasMany(Service::class,'id_user');
+    }
+
+    public function spareparts() {
+        return $this->hasMany(Sparepart::class, 'id_user');
     }
 
 }

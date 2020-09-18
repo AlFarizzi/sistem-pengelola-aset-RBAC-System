@@ -18,11 +18,9 @@ class UserSeeder extends Seeder
             "username" => "admin",
             "password" => bcrypt('admin'),
             "nama" => "fariz-admin",
-            "jk" => "Laki - Laki",
             "no_hp" => "081256785546",
             "alamat" => "Bumi",
             "email" => "admin@gmail.com",
-            "level" => "admin",
             "nik" => "0090",
         ]);
         $user->assignRole('admin');
@@ -31,11 +29,9 @@ class UserSeeder extends Seeder
             "username" => "karyawan",
             "password" => bcrypt('karyawan'),
             "nama" => "fariz-karyawan",
-            "jk" => "Laki - Laki",
-            "no_hp" => "081256785546",
+            "no_hp" => "081256785547",
             "alamat" => "Bumi",
             "email" => "karyawan@gmail.com",
-            "level" => "karyawan",
             "nik" => "0091",
         ]);
         $user->assignRole('karyawan');
@@ -44,11 +40,9 @@ class UserSeeder extends Seeder
             "username" => "pimpinan",
             "password" => bcrypt('pimpinan'),
             "nama" => "fariz-pimpinan",
-            "jk" => "Laki - Laki",
-            "no_hp" => "081256785546",
+            "no_hp" => "081256785548",
             "alamat" => "Bumi",
             "email" => "pimpinan@gmail.com",
-            "level" => "pimpinan",
             "nik" => "0092",
         ]);
         $user->assignRole('pimpinan');
@@ -57,12 +51,10 @@ class UserSeeder extends Seeder
             "username" => "keuangan",
             "password" => bcrypt('keuangan'),
             "nama" => "fariz-keuangan",
-            "jk" => "Laki - Laki",
-            "no_hp" => "081256785546",
+            "no_hp" => "081256785549",
             "alamat" => "Bumi",
             "email" => "keuangan@gmail.com",
-            "level" => "keuangan",
-            "nik" => "0092",
+            "nik" => "0093",
         ]);
         $user->assignRole('keuangan');
 

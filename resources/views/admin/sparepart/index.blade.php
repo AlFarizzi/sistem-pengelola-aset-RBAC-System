@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-header">
                         <ul class="nav nav-pills nav-primary card-header-pills">
-                            @can('Confirm & Reject Sparepart')
+                            @can('Confirm & Reject Sparepart Request')
                                 <li class="nav-item">
                                     <a class="nav-link" :class="{active: tab == 1}"  href="#" @click="tab = 1" >Konfirmasi</a>
                                 </li>
@@ -43,7 +43,7 @@
                             @endcan
                         </ul>
                         </div>
-                        @can('Confirm & Reject Sparepart')
+                        @can('Confirm & Reject Sparepart Request')
                             <div class="card-body" x-show="tab == 1">
                                 <table id="basic-datatables" class="display table table-striped table-hover" >
                                     <thead>
@@ -57,7 +57,7 @@
                                         @foreach ($confir as $conf)
                                             <tr>
                                                 <td>{{$conf->nama}}</td>
-                                                <td>{{number_format($conf->harga)}}</td>
+                                                <td>Rp.{{number_format($conf->harga)}}</td>
                                                 <td>{{number_format($conf->jumlah)}}</td>
                                             </tr>
                                         @endforeach

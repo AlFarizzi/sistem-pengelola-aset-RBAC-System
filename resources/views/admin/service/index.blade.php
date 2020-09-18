@@ -49,10 +49,10 @@
                                     <tbody>
                                         @foreach ($confir as $conf)
                                             <tr>
-                                                <td>{{$conf->jenis}}</td>
+                                                <td>{{$conf->demage->demage}}</td>
                                                 <td>{{$conf->user->nama}}</td>
-                                                <td>{{$conf->asset->nama}}</td>
-                                                <td>Rp.{{number_format($conf->harga)}}</td>
+                                                <td>{{$conf->asset->nama_asset}}</td>
+                                              <td>Rp.{{number_format($conf->harga)}}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -70,19 +70,19 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($b_confir as $conf)
+                                        @foreach ($b_confir as $b_conf)
                                             <tr>
-                                                <td>{{$conf->jenis}}</td>
-                                                <td>{{$conf->user->nama}}</td>
-                                                <td>{{$conf->asset->nama}}</td>
-                                                <td>Rp.{{number_format($conf->harga)}}</td>
+                                                <td>{{$b_conf->demage->demage}}</td>
+                                                 <td>{{$b_conf->user->nama}}</td>
+                                                 <td>{{$b_conf->asset->nama_asset}}</td>
+                                                <td>Rp.{{number_format($b_conf->harga)}}</td>
                                                 <td>
-                                                    <form style="display:inline" action="{{route('service.confirm',$conf)}}" method="post">
+                                                    <form style="display:inline" action="{{route('service.confirm',$b_conf)}}" method="post">
                                                         @csrf
                                                         @method('put')
                                                         <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-check"></i> Konfirmasi</button>    
                                                     </form>                                                    
-                                                    <form style="display:inline" action="{{route('service.reject',$conf)}}" method="post">
+                                                    <form style="display:inline" action="{{route('service.reject',$b_conf)}}" method="post">
                                                         @csrf
                                                         @method('delete')
                                                         <button onclick="return confirm('Yakin Akan Menolak Permintaan Service Ini')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Tolak</button>    

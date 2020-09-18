@@ -15,15 +15,13 @@ class CreateAssetsTable extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->id();
-            $table->string('no_asset')->unique();
-            $table->string('nama');
-            $table->string('tgl_perolehan');
-            $table->integer('jumlah');
-            $table->string('satuan');
-            $table->string('tgl_service');
-            $table->string('tgl_pajak');
-            $table->string('tgl_limit');
             $table->integer('id_tipe')->index();
+            $table->integer('id_user')->index();
+            $table->string('plat_nomor')->unique();
+            $table->string('nama_asset');
+            $table->string('tgl_perolehan');
+            $table->string('tgl_service')->nullable();
+            $table->string('tgl_pajak');
             $table->timestamps();
         });
     }

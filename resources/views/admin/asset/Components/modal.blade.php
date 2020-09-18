@@ -13,29 +13,26 @@
                 <form action="{{route('asset.update')}}" method="post">
                     @csrf
                     @method('put')
+                    <input type="hidden" name="id" id="id">
                     <div class="form-group">
                         <label for="" class="form-label">Nama Asset</label>
-                        <input type="text" name="nama" id="nama" class="form-control">
+                        <input placeholder="Masukan Jumlah Nama Asset" type="text" id="nama_asset" name="nama_asset" id="nama" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">Jumlah</label>
-                        <input type="number" name="jumlah" id="jumlah" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label"></label>
+                        <label class="form-label">Plat Nomor</label>
+                        <input type="text" name="plat_nomor" id="plat_nomor" class="form-control">
                     </div>
                     <div class="form-row">
                         <div class="col form-group">
-                            <label class="form-label">Tanggal Service</label>
-                            <input type="date" name="tgl_service" id="tgl_service" class="form-control">
+                            <label class="form-label">Tanggal Perolehan</label>
+                            <input type="date" name="tgl_perolehan" id="tgl_perolehan" class="form-control">
                         </div>
-                        <input type="hidden" name="no_asset" id="no_asset">
                         <div class="col form-group">
                             <label class="form-label">Tanggal Pajak</label>
                             <input type="date" name="tgl_pajak" id="tgl_pajak" class="form-control">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-paper-plane"></i> Kirim</button>
+                    <button type="submit" class="btn btn-primary btn-sm ml-3"><i class="fa fa-paper-plane"></i> Kirim</button>
                 </form>
 			</div>
 		</div>
@@ -56,23 +53,16 @@
                     @csrf
                     <div class="form-group">
                         <label for="" class="form-label">Nama Asset</label>
-                        <input placeholder="Masukan Jumlah Nama Asset" type="text" name="nama" id="nama" class="form-control">
+                        <input placeholder="Masukan Jumlah Nama Asset" type="text" name="nama_asset" id="nama" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">Jumlah</label>
-                        <input placeholder="Masukan Jumlah Asset" type="number" name="jumlah" id="jumlah" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label"></label>
+                        <label class="form-label">Plat Nomor</label>
+                        <input type="text" name="plat_nomor" id="" class="form-control">
                     </div>
                     <div class="form-row">
                         <div class="col form-group">
                             <label class="form-label">Tanggal Perolehan</label>
                             <input type="date" name="tgl_perolehan" id="tgl_pajak" class="form-control">
-                        </div>
-                        <div class="col form-group">
-                            <label class="form-label">Tanggal Limit</label>
-                            <input type="date" name="tgl_limit" id="tgl_pajak" class="form-control">
                         </div>
                     </div>
                     <div class="form-row">
@@ -86,14 +76,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="form-label">Divisi</label>
-                        <select name="id_tipe" class="form-control">
-                            <option value="1">Divisi A</option>
-                            <option value="2">Divisi B</option>
-                            <option value="3">Divisi C</option>
+                        <label class="form-label">Penanggung Jawab</label>
+                        <select name="id_user" class="form-control">
+                            @foreach ($karyawan as $i)
+                                <option value="{{$i->id}}">{{$i->nama}}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-paper-plane"></i> Kirim</button>
+                    <div class="form-group">
+                        <label class="form-label">Divisi</label>
+                        <select name="id_tipe" class="form-control">
+                            @foreach ($tipe as $i)
+                                <option value="{{$i->id}}">{{$i->type}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm ml-3"><i class="fa fa-paper-plane"></i> Kirim</button>
                 </form>
 			</div>
 		</div>

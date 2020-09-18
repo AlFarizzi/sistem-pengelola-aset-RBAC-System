@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="mt-5">
         <table class="table table-striped">
             <thead>
               <tr>

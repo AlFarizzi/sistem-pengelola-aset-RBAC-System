@@ -24,10 +24,9 @@ class serviceRequest extends FormRequest
     public function rules()
     {
         return [
-            "jenis" => ['required'],
+            "id_jenis" => ['required'],
             "id_asset" => ['required'],
-            "harga" => ['gte:1', 'required'],
-            "km_asset" => ['required','gte:1'],
+            "harga" => ['gte:1000', 'required'],
             "detail" => ['required']
         ];
     }

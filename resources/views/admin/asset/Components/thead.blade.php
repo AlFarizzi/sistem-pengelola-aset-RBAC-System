@@ -1,8 +1,7 @@
 <thead>
     <tr>
-        <th>No.Asset</th>
+        <th>Plat Nomor</th>
         <th>Nama Asset</th>
-        <th>Jumlah</th>
         {{-- <th>Tanggal Perolehan</th>
         <th>Tanggal Service</th>
         <th>Tanggal Limit</th>

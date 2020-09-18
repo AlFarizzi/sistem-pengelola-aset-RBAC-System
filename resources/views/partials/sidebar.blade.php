@@ -43,7 +43,7 @@
                         </span>
                         <h4 class="text-section">Data Master</h4>
                     </li>
-                    @can(['CRUD Aset','CRUD User', 'CRUD Sparepart'])
+                    @can(['CRUD Asset','CRUD User'])
                     <li class="nav-item {{request()->is('admin/asset') ? 'active' : ''}}">
                         <a href="{{route('asset.index')}}">
                             <i class="fas fa-car"></i>
@@ -60,24 +60,27 @@
                                 <i class="fa fa-users"></i>
                                 <p>Data User</p>
                             </a>
-                        </li>
-                        <li class="nav-item {{request()->is('admin/sparepart') ? 'active' : ''}}">
-                            <a href="{{route('sparepart.index')}}">
-                                <i class="fa fa-cogs"></i>
-                                <p>Data Sparepart</p>
-                            </a>
-                        </li>
-                    @endcan                 
-                        @can('Confirm & Reject Service')
-                            <li class="nav-item {{request()->is('admin/service') ? 'active' : ''}}">
+                        </li>              
+                    @endcan                  
+                        @can(['Confirm & Reject Service Request','Confirm & Reject Sparepart Request'])
+                            <li class="nav-item {{request()->is('service') ? 'active' : ''}}">
                                 <a href="{{route('service.index')}}">
                                     <i class="fa fa-wrench"></i>
                                     <p>Data Service</p>
                                 </a>
                             </li>
+                            <li class="nav-item {{request()->is('sparepart') ? 'active' : ''}}">
+                                <a href="{{route('sparepart.index')}}">
+                                    <i class="fa fa-cogs"></i>
+                                    <p>Data Sparepart</p>
+                                </a>
+                            </li>
                         @endcan
+
+                        
+                        
                         @can('Report Download')
-                            <li class="nav-item {{request()->is('admin/laporan/service') ||  request()->is('admin/laporan/sparepart') ? 'active' : ''}} ">
+                            <li class="nav-item {{request()->is('laporan/service') ||  request()->is('laporan/sparepart') ? 'active' : ''}} ">
                                 <a data-toggle="collapse" href="#laporan">
                                     <i class="fas fa-table"></i>
                                     <p>Laporan  </p>
@@ -122,7 +125,7 @@
                             </div>
                         </li>
 
-                        <li class="nav-item {{request()->is('karyawan/sparepart') ? 'active' : ''}} ">
+                        <li class="nav-item {{request()->is('karyawan/sparepart') || request()->is('karyawan/list-sparepart-request') ? 'active' : ''}} ">
                             <a data-toggle="collapse" href="#sparepart">
                                 <i class="fas fa-cogs"></i>
                                 <p>Sparepart</p>
@@ -131,12 +134,12 @@
                             <div class="collapse" id="sparepart">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a href="{{route('service.request')}}">
+                                        <a href="{{route('sparepart.request')}}">
                                             <span class="sub-item">Permintaan Sparepart</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="{{route('sparepart.listRequest')}}">
                                             <span class="sub-item">List Permintaan</span>
                                         </a>
                                     </li>

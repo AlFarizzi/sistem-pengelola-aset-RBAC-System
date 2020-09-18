@@ -9,19 +9,18 @@ class Asset extends Model
 {
     use HasFactory;
     protected $fillable = [
-                            'no_asset',
-                            'nama',
+                            'id_tipe',
+                            'id_user',
+                            'plat_nomor',
+                            'nama_asset',
                             'tgl_perolehan',
-                            'jumlah','unit',
                             'tgl_service',
-                            'tgl_pajak',
-                            'tgl_limit',
-                            'id_tipe', 'satuan'
+                            'tgl_pajak'
                         ];
 
-        public function services() {
-            return $this->hasMany(Service::class, 'id_asset');
-        }
+                        public function service() {
+                            return $this->hasMany(Service::class,'id_asset');
+                        }
 
                         
 }

@@ -20,15 +20,15 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="fa fa-users text-primary"></i>
+                                        <i class="fa fa-wrench text-primary"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Data User</p>
+                                        <p class="card-category">Data Service</p>
                                         <h4 class="card-title"></h4>
                                         <small class="">
-                                            <a href="{{route('user.index')}}">
+                                            <a href="{{route('service.listRequest')}}">
                                                 <i class="fa fa-search-plus"></i>
                                                 Detail
                                             </a>
@@ -45,15 +45,15 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="icon-big text-center">
-                                        <i class="fas fa-car text-danger"></i>
+                                        <i class="fas fa-cogs text-danger"></i>
                                     </div>
                                 </div>
                                 <div class="col-7 col-stats">
                                     <div class="numbers">
-                                        <p class="card-category">Data Asset</p>
+                                        <p class="card-category">Data Sparepart</p>
                                         <h4 class="card-title"></h4>
                                         <small class="">
-                                            <a href="{{route('asset.index')}}">
+                                            <a href="{{route('sparepart.listRequest')}}">
                                                 <i class="fa fa-search-plus"></i>
                                                 Detail
                                             </a>

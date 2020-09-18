@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateAssetRequest extends FormRequest
+class sparepartRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class CreateAssetRequest extends FormRequest
     public function rules()
     {
         return [
-            "nama_asset" => ['required'],
-            "jumlah" => ['required', 'gte:1'],
-            "tgl_perolehan" => ['required'],
-            "tgl_service" => ['required'],
-            "tgl_pajak" => ['required'],
-            "plat_nomor" => ['required', 'unique:assets,plat_nomor'] 
+            "nama" => ['required'],
+            "harga" => ['required', 'gte:1000'],
+            "jumlah" => ['required', "gte:1"]
         ];
     }
 }

@@ -40,8 +40,10 @@ class UserController extends Controller
 
     public function create(CreateUserRequest $request) {
         $input = $request->all();
+        // dd($input);
         $input['password'] = bcrypt($request->password);
-        User::create($input);
+        $user = User::create($input);
+        $user->assignRole($input['level']);
         session()->flash('Berhasil', 'Data Berhasil Di Tambahkan');
         return back();
     }

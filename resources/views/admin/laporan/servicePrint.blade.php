@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="mt-5">
         <table class="table table-striped">
             <thead>
               <tr>
@@ -20,10 +20,10 @@
             </thead>
             <tbody>
             @forelse ($sp as $s)
-                <tr>
+                <tr>{{$s->asset->nama}} ({{$s->asset->no_asset}})
                   <th scope="row">{{$loop->iteration}}</th>
-                  <td>{{$s->jenis}}</td>
-                  <td>{{$s->asset->nama}} ({{$s->asset->no_asset}})</td>
+                  <td>{{$s->demage->demage}}</td>
+                  <td>{{$s->asset->nama_asset}}</td>
                   <td>{{$s->user->nama}}</td>
                   <td>Rp.{{number_format($s->harga)}}</td>
                 </tr>

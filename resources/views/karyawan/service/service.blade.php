@@ -31,21 +31,21 @@
                             <h3>Permintaan Service</h3>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('service.request.send')}}" method="post">
+                            <form action="{{route('service.requestSend')}}" method="post">
                                @csrf
                                 <div class="form-row">
                                     <div class="col form-group">
                                         <label class="form-label">Jenis Service</label>
-                                        <select name="jenis" class="form-control">
-                                            <option value="Berat">Berat</option>
-                                            <option value="Ringan">Ringan</option>
+                                        <select name="id_jenis" class="form-control">
+                                            <option value="1">Ringan</option>
+                                            <option value="2">Berat</option>
                                         </select>
                                     </div>
                                     <div class="col form-group">
                                         <label class="form-label">Asset Yang Akan Di Service</label>
                                         <select name="id_asset" class="js-example-basic-single form-control">
                                             @foreach ($assets as $item)
-                                                <option value="{{$item->id}}">{{$item->nama}}</option>
+                                                <option value="{{$item->id}}">{{$item->nama_asset}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -54,10 +54,6 @@
                                 <div class="form-group">
                                     <label class="form-label">Biaya Service</label>
                                     <input type="number" name="harga"  class="form-control" placeholder="Masukan Estimasi Biaya Service">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">KM Asset</label>
-                                    <input type="number" name="km_asset" class="form-control" placeholder="Masukan Estimasi Jarak Tempuh">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Detail Servive</label>

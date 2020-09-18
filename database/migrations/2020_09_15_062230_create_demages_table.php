@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSparepartsTable extends Migration
+class CreateDemagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateSparepartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spareparts', function (Blueprint $table) {
+        Schema::create('demages', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_user');
-            $table->string('nama');
-            $table->integer('harga');
-            $table->integer('jumlah');
-            $table->integer('total');
-            $table->string('status');
+            $table->string('demage');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateSparepartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spareparts');
+        Schema::dropIfExists('demages');
     }
 }

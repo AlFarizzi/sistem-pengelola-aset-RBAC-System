@@ -14,8 +14,8 @@
                                         <label class="form-label">Pilih Kategori Laporan</label>
                                         <select name="status" class="form-control">
                                             <option value="#" disabled selected> Pilih Kategori Laporan </option>
-                                            <option value="Konfirmasi">Konfirmasi</option>
-                                            <option value="Belum Konfirmasi">Belum Konfirmasi</option>
+                                            <option value="1">Konfirmasi</option>
+                                            <option value="2">Belum Konfirmasi</option>
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-sm ml-3"><i class="fa fa-paper-plane"></i> Pilih</button>

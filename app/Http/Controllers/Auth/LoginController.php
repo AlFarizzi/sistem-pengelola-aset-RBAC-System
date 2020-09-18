@@ -52,6 +52,10 @@ class LoginController extends Controller
             return redirect()->route('admin.index');
         } else if($user->hasRole('karyawan')) {
             return redirect()->route('karyawan.index');
+        } else if($user->hasRole('keuangan')) {
+            return redirect()->route('keuangan.index');
+        } else if($user->hasRole('pimpinan')) {
+            return redirect()->route('pimpinan.index');
         }
     }
 

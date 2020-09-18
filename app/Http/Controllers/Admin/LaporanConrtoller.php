@@ -19,6 +19,7 @@ class LaporanConrtoller extends Controller
     }
 
     public function sparepartPrint(Request $request) {
+        // dd($request->all());
         $sp = Sparepart::where('status', $request->status)->get();
         $pdf = PDF::loadView('admin.laporan.sparepartPrint', compact('sp'));
         return $pdf->download('sparepart.pdf');
@@ -26,7 +27,7 @@ class LaporanConrtoller extends Controller
     }
 
     public function servicePrint(Request $request) {
-        $sp = Service::where('status', $request->status)->get()->all();
+        $sp = Service::where('id_status', $request->status)->get()->all();
         // dd($sp[0]->asset->nama);
         // dd($sp);
         $pdf = PDF::loadView('admin.laporan.servicePrint', compact('sp'));

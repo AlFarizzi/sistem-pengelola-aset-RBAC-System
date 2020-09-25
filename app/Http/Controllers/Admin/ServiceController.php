@@ -20,7 +20,7 @@ class ServiceController extends Controller
 
     public function confirm(Service $b_conf) {
         // dd($b_conf->user->email);
-        Mail::to($b_conf->user->email)->send(new ServiceAcc());
+        // Mail::to($b_conf->user->email)->send(new ServiceAcc());
         // dd($b_conf);
         $b_conf->update([
             "id_status" => 1,
@@ -30,7 +30,7 @@ class ServiceController extends Controller
     }
 
     public function reject(Service $b_conf) {
-        Mail::to('malfarizzi13@gmail.com')->send(new ServiceReject());
+        // Mail::to('malfarizzi13@gmail.com')->send(new ServiceReject());
         $b_conf->delete();
         session()->flash('Berhasil', 'Permintaab Service Asset '.$b_conf->asset->no_asset. ' Telah Ditolak');
         return back();   

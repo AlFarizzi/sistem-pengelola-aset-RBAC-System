@@ -32,14 +32,14 @@ class SparepartController extends Controller
     }
 
     public function reject(Sparepart $conf) {
-        Mail::to($conf->user->email)->send(new SparepartReject());
+        // Mail::to($conf->user->email)->send(new SparepartReject());
         $conf->delete();
         session()->flash('Berhasil', 'Permintaan Sparepart Telah Ditolak');
         return back();
     }
 
     public function confirm(Sparepart $conf) {
-        Mail::to($conf->user->email)->send(new SparepartAcc());
+        // Mail::to($conf->user->email)->send(new SparepartAcc());
         $conf->update([
             "status" => 1
         ]);
